@@ -1,0 +1,29 @@
+﻿namespace Skynet.Shared.Loan.LoanApplication
+{
+    public enum IncomeType
+    {
+        W2,
+        SelfEmployed,
+        Alimony,
+        AutomobileAllowance,
+        BoarderIncome,
+        CapitalGains,
+        ChildSupport,
+        Disability,
+        FosterCare,
+        HousingOrParsonage,
+        InterestAndDividends,
+        MortgageCreditCertificate,
+        MortgageDifferentialPayments,
+        NotesReceivable,
+        PublicAssistance,
+        Retirement,
+        RoyaltyPayments,
+        SeparateMaintenance,
+        SocialSecurity,
+        Trust,
+        UnemploymentBenefits,
+        VACompensation,
+        Other
+    }
+}
