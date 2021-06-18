@@ -5,8 +5,6 @@ namespace TestConsole
 {
     internal class Program
     {
-        private const char Yes = 'y';
-        public const string FilePath = "../../../template.html";
         private static bool _exit = false;
         
         private static void Main(string[] args)
@@ -43,14 +41,14 @@ namespace TestConsole
 
             _exit = answer.KeyChar switch
                     {
-                        Yes => true,
+                        Constants.Yes => true,
                         _ => false
                     };
         }
 
         private static void GenerateTemplate()
         {
-            var content = File.ReadAllText(FilePath);
+            var content = File.ReadAllText(Constants.FilePath);
             var tester = new Tester(content);
             
             tester.WriteLine("Template Content")
@@ -59,8 +57,17 @@ namespace TestConsole
                   .Underline()
                   .WriteLine("Scriban output")
                   .Underline()
-                  .RenderByScriban()
+                  .RenderByScriban(AskAboutPreviewMode())
                   .Underline();
+        }
+
+        private static bool AskAboutPreviewMode()
+        {
+            Console.WriteLine("Is preview mode?");
+
+            return Console.ReadKey()
+                          .KeyChar
+                          .IsYes();
         }
     }
 }

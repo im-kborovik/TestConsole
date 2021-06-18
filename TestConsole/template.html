@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Test</title>
-    <link rel="stylesheet"
-          href="style.css">
+    <link href="style.css"
+          rel="stylesheet">
 </head>
 <body>
+<div class="scriban-code">
+    {{ if visible }}
+</div>
 <span class="dynamic-field">
-            test
-            {{ ret }}
-        </span>
+    <span>Test</span>
+</span>
+<div class="scriban-code">
+    {{ end }}
+</div>
+<span class="scriban-code">
+    {{ include 'd_field' }}
+</span>
 </body>
 </html>
